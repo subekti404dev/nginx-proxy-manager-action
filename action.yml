@@ -1,0 +1,51 @@
+name: Nginx Proxy Manager Action
+description: Github Action for Add New Domain to Nginx Proxy Manager
+inputs:
+  npm-url:
+    description: URL of the Nginx Proxy Manager API.
+    required: true
+  npm-email:
+    description: Email to authenticate against the API.
+    required: true
+  npm-password:
+    description: Password to authenticate against the API.
+    required: true
+  domain-name:
+    description: Domain name to added
+    required: true
+  forward-scheme:
+    description: Forward Shcema
+    required: false
+    default: 'http'
+  forward-host:
+    description: Forward Host.
+    required: true
+  forward-port:
+    description: Forward Port.
+    required: true
+  cache-assets:
+    description: Cache Assets
+    required: false
+    default: true
+  block-exploits:
+    description: Block Common Exploits
+    required: false
+    default: true
+  websocket-support:
+    description: Websocket Support
+    required: false
+    default: true
+  force-ssl:
+    description: Force SSL
+    required: false
+    default: true
+  http2-support:
+    description: HTTP/2 Support
+    required: false
+    default: true
+runs:
+  using: node12
+  main: dist/index.js
+branding:
+  icon: upload-cloud
+  color: purple
