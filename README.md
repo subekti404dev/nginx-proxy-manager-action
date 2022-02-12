@@ -11,8 +11,8 @@ jobs:
   runs-on: ubuntu-latest
   steps:
     - name: Clone Repository
--     uses: actions/checkout@v2
-    - name: Deploy Stack
+      uses: actions/checkout@v2
+    - name: Configure Nginx Proxy Manager
       uses: subekti404dev/nginx-proxy-manager-action@v1
       with:
         npm-url: https://nginx.example.com
